@@ -1,0 +1,14 @@
+User
+    id
+    type
+    value
+
+Order
+    id
+    type
+    no
+    trade_no
+    amount
+    remark
+    status create / paid / close
+    user_id

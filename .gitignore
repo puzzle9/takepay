@@ -1,0 +1,9 @@
+/vendor
+/node_modules
+/.idea
+/public/assets
+/public/mix-manifest.json
+Homestead.json
+Homestead.yaml
+.env
+.phpunit.result.cache
