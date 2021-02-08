@@ -84,6 +84,11 @@ class Order extends Controller
                 abort(422, '暂不支持此订单');
                 break;
         }
+
+        return [
+            'type' => $type,
+            'data' => $pay,
+        ];
     }
 
     public function lists(Request $request)
