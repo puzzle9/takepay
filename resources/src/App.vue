@@ -155,6 +155,21 @@
                     .then((res) => {
                         switch (res.type) {
                             case 'wechat':
+                                let data = res.data
+                                wx.chooseWXPay({
+                                    timestamp: data.timeStamp,
+                                    ...data,
+                                    success: () => {
+                                        vant.Notify({ type: 'success', message: '支付成功' })
+                                        this.orderRefresh()
+                                    },
+                                    cancel: () => {
+                                        vant.Notify({ type: 'warning', message: '已取消支付' })
+                                    },
+                                    fail: () => {
+                                        vant.Notify({ type: 'danger', message: '支付拉起错误 请联系管理员' })
+                                    },
+                                })
                                 break
                             default:
                                 this.Notify({ type: 'warning', message: '暂不支持此协议' })
