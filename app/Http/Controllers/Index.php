@@ -31,7 +31,6 @@ class Index extends Controller
 
         if (User::isWechat()) {
             $debug = config('app.debug');
-            $debug = false;
 
             $wechat_jssdk = User::officialAccount()->jssdk->setUrl($request->input('url'))->buildConfig([
                 'hideAllNonBaseMenuItem',
